@@ -1,0 +1,98 @@
+[
+    {
+        "name": "\u0001rBBC News",
+        "url": "http://feeds.bbci.co.uk/news/rss.xml",
+        "icon": "bbc",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001bFOX NEWS\u0001k\u0001h Latest",
+        "url": "https://moxie.foxnews.com/feedburner/latest.xml",
+        "icon": "fox",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001rCNN\u0001k\u0001h World News",
+        "url": "http://rss.cnn.com/rss/edition_world.rss",
+        "icon": "cnn",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001rCBC\u0001k\u0001h Top Stories",
+        "url": "https://www.cbc.ca/cmlink/rss-topstories",
+        "icon": "cbc",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001w\u0001hNew York Times\u0001k\u0001h World News",
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+        "icon": "rss",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001w\u0001hNew York Times\u0001k\u0001h Technology",
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+        "icon": "rss",
+        "frog_prompt": true
+    },
+    {
+        "name": "Los Angeles Times",
+        "url": "https://www.latimes.com/local/rss2.0.xml",
+        "icon": "rss",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001cHuffPost\u0001k\u0001h Breaking, US & World News",
+        "url": "https://www.huffpost.com/section/front-page/feed?x=1",
+        "icon": "rss",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001b\u0001hUSATODAY\u0001k\u0001h Nation Top Stories",
+        "url": "http://rssfeeds.usatoday.com/UsatodaycomNation-TopStories",
+        "icon": "usa",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001w\u0001hpolitico.com\u0001k\u0001h Top Stories",
+        "url": "https://www.politico.com/rss/politicopicks.xml",
+        "icon": "rss",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001w\u0001hNPR\u0001k\u0001h World",
+        "url": "https://feeds.npr.org/1004/rss.xml",
+        "icon": "npr",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001w\u0001hNPR\u0001k\u0001h Nation",
+        "url": "https://feeds.npr.org/1003/rss.xml",
+        "icon": "npr",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001rESPN\u0001k\u0001h Top Stories",
+        "url": "https://www.espn.com/espn/rss/news",
+        "icon": "espn",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001rNewsweek\u0001k\u0001h Latest News",
+        "url": "https://www.newsweek.com/rss",
+        "icon": "rss",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001w\u0001hHackaday",
+        "url": "https://hackaday.com/blog/feed/",
+        "icon": "hackaday",
+        "frog_prompt": true
+    },
+    {
+        "name": "\u0001b\u0001hJokes of the day\u0001k\u0001h",
+        "url": "https://jokesoftheday.net/jokes-feed/",
+        "icon": "happy",
+        "frog_prompt": false
+    }
+]
