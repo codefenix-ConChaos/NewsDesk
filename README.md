@@ -70,6 +70,6 @@ or if the results from FrogFind aren't readable.
 ## Other Notes
 
 There's no way to know whether FrogFind.com is here to stay, or will always
-be free. If it ever changes or ceases to exist, this mod would now longer be
+be free. If it ever changes or ceases to exist, this mod would no longer be
 able to fetch text-renditions of articles.
 
