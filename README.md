@@ -42,8 +42,13 @@ the article from FrogFind.com.
     Start-up Directory    ../xtrn/mods
     Command Line          ?news.js
     ```
-       
-       
+    
+ 3. If you want to show news feed during logon, add the following line to the
+    end of your /mods/logon.js file (copy from /exec/logon.js if you haven't
+    already done so):
+    
+    `load("news.js");`       
+
 
 ## Configuration and Customization:
 
