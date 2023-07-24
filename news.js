@@ -19,13 +19,13 @@ var consoleXY;
 var rss;
 var selection = "";
 var jsonSources = "";
-var fSources = new File(system.mods_dir + "news_src.json");
+var fSources = new File(js.exec_dir + "news_src.json");
 if (fSources.open("r")) {
     jsonSources = JSON.parse(fSources.read());
     fSources.close();
     while (bbs.online && selection !== "Q") {
         console.clear();
-        console.printfile(system.mods_dir + "news.msg", P_NOABORT);
+        console.printfile(js.exec_dir + "news.msg", P_NOABORT);
         s = 0;
         l = 0;
         while (s < Object.keys(jsonSources).length) {
@@ -64,8 +64,8 @@ if (fSources.open("r")) {
                 while (bbs.online && articleSelect !== "Q") {
                     articleSelect = "";
                     console.clear();
-                    if (file_exists(backslash(system.mods_dir + "newsicons") + jsonSources[selection].icon + ".msg")) {
-                        console.printfile(backslash(system.mods_dir + "newsicons") + jsonSources[selection].icon + ".msg", P_NOABORT);
+                    if (file_exists(backslash(js.exec_dir + "newsicons") + jsonSources[selection].icon + ".msg")) {
+                        console.printfile(backslash(js.exec_dir + "newsicons") + jsonSources[selection].icon + ".msg", P_NOABORT);
                     }
                     consoleXY = console.getxy();
                     console.gotoxy(30, 1);
