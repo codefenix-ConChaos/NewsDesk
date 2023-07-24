@@ -33,7 +33,9 @@ the article from FrogFind.com.
 
 ## Instructions:
 
- 1. Extract the contents of the ZIP file to /sbbs/mods/
+ 1. Extract the contents of the ZIP file to /sbbs/mods (or another path
+    of your choosing; make sure you set the path properly in the next
+    steps that follow).
  
  2. Add to SCFG -> External Programs-> Online Programs (Doors):
     ```
@@ -47,7 +49,7 @@ the article from FrogFind.com.
     end of your /mods/logon.js file (copy from /exec/logon.js if you haven't
     already done so):
     
-    `load("news.js");`       
+    `bbs.exec("?../mods/news.js");`       
 
 
 ## Configuration and Customization:
