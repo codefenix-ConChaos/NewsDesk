@@ -1,7 +1,7 @@
 [
     {
         "name": "\u0001rBBC News",
-        "url": "http://feeds.bbci.co.uk/news/rss.xml",
+        "url": "https://feeds.bbci.co.uk/news/rss.xml",
         "icon": "bbc",
         "frog_prompt": true
     },
@@ -19,7 +19,7 @@
     },
     {
         "name": "\u0001rCBC\u0001k\u0001h Top Stories",
-        "url": "https://www.cbc.ca/cmlink/rss-topstories",
+        "url": "https://www.cbc.ca/webfeed/rss/rss-topstories",
         "icon": "cbc",
         "frog_prompt": true
     },
