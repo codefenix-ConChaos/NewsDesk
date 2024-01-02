@@ -10,15 +10,19 @@ const MENU_ITEM_FMT = "\x01c\x01h%2d\x01k\x01h)\x01n %s\x010\x01n";
 const PROMPT_FMT = "\x01n\r\nSelect: \x01h1\x01n-\x01h%d\x01n or \x01hQ\x01n to quit\x01h> ";
 const DIVIDER = "\x01n\x01b______________________________________________________________________________\x01n";
 const BW_TEXT = true;
+const MONTH = ["Jan", "Feb", "Mar", "Apr", "May",
+    "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
 
 var articleCount = 0;
 var articleSelect = 0;
 var s = 0;
 var l = 0;
-var consoleXY;
+var startY;
 var rss;
 var selection = "";
 var jsonSources = "";
+var msgFile = "";
 var fSources = new File(js.exec_dir + "news_src.json");
 if (fSources.open("r")) {
     jsonSources = JSON.parse(fSources.read());
@@ -63,27 +67,32 @@ if (fSources.open("r")) {
             for (var c = 0; c < rss.channels.length && c <= SHOW_AT_MOST; c++) { // It's normal to have at most one channel in a feed.
                 while (bbs.online && articleSelect !== "Q") {
                     articleSelect = "";
+                    msgFile = backslash(backslash(js.exec_dir) + "newsicons") + jsonSources[selection].icon + ".msg";
                     console.clear();
-                    if (file_exists(backslash(js.exec_dir + "newsicons") + jsonSources[selection].icon + ".msg")) {
-                        console.printfile(backslash(js.exec_dir + "newsicons") + jsonSources[selection].icon + ".msg", P_NOABORT);
+                    if (file_exists(msgFile)) {
+                        console.printfile(msgFile, P_NOABORT);
+                        startY = console.getxy().y;
+                    } else {
+                        log(LOG_WARNING, "Missing msg file: " + msgFile);
+                        startY = 5;
                     }
-                    consoleXY = console.getxy();
+                                                
                     console.gotoxy(30, 1);
                     printf("\x01y\x01h%*s", 50, rss.channels[c].title.slice(0, 50).trim());
                     console.gotoxy(30, 2);
-                    printf("\x01w\x01h%*s", 50, "updated " + new Date(rss.channels[c].updated === "" ? rss.channels[c].items[0].date : rss.channels[c].updated).toLocaleString());
+                    printf("\x01w\x01h%*s", 50, "updated " + getShortDateTime(new Date(rss.channels[c].updated === "" ? rss.channels[c].items[0].date : rss.channels[c].updated)));
 
                     var frame = new Frame(31, 3, 49, 3, BG_BLACK);
                     frame.open();
                     frame.putmsg("\x01k\x01h" + lfexpand(word_wrap(utf8_decode(rss.channels[c].description.trim()), 49, 49, true, true)).trim());
                     frame.cycle();
 
-                    console.gotoxy(1, consoleXY.y);
-                    print("\x01n\r\n" + format("\x01c%2s\x01k\x01h)\x01n \x01w%-58s\x01n \x01b%-16s", "#", "title", "added"));
+                    console.gotoxy(1, startY);
+                    print("\x01n\r\n" + format("\x01c%2s\x01k\x01h)\x01n \x01w%-62s\x01n  \x01b%-11s", "#", "title", "added"));
                     print(DIVIDER);
                     articleCount = 0;
                     for (var i = 0; i < rss.channels[c].items.length && i < SHOW_AT_MOST; i++) {
-                        print(format("\x01c\x01h%2d\x01k\x01h)\x01n \x01w\x01h%-58.58s\x01n \x01b\x01h%-16.16s", i + 1, utf8_decode(rss.channels[c].items[i].title), new Date(rss.channels[c].items[i].date).toDateString("en-US")));
+                        print(format("\x01c\x01h%2d\x01k\x01h)\x01n \x01w\x01h%-62.62s\x01n  \x01b\x01h%-11.11s", i + 1, utf8_decode(rss.channels[c].items[i].title), getShortDate(new Date(rss.channels[c].items[i].date)) ));
                         articleCount = articleCount + 1;
                     }
                     printf(PROMPT_FMT, articleCount);
@@ -127,4 +136,12 @@ if (fSources.open("r")) {
             } // end for
         }
     } // end while
+}
+
+function getShortDate(d) {
+    return format( "%s %02d %04d", MONTH[d.getMonth()], d.getDate(), d.getFullYear() );
+}
+
+function getShortDateTime(d) {
+    return format( "%s %02d %04d %02d:%02d", MONTH[d.getMonth()], d.getDate(), d.getFullYear(), d.getHours(), d.getMinutes() );
 }
