@@ -42,18 +42,6 @@
         "frog_prompt": true
     },
     {
-        "name": "\u0001cHuffPost\u0001k\u0001h Breaking, US & World News",
-        "url": "https://www.huffpost.com/section/front-page/feed?x=1",
-        "icon": "rss",
-        "frog_prompt": true
-    },
-    {
-        "name": "\u0001b\u0001hUSATODAY\u0001k\u0001h Nation Top Stories",
-        "url": "http://rssfeeds.usatoday.com/UsatodaycomNation-TopStories",
-        "icon": "usa",
-        "frog_prompt": true
-    },
-    {
         "name": "\u0001w\u0001hpolitico.com\u0001k\u0001h Top Stories",
         "url": "https://www.politico.com/rss/politicopicks.xml",
         "icon": "rss",
